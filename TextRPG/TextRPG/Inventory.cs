@@ -13,11 +13,10 @@ namespace TextRPG
 
         public Inventory()
         {
-            items.Add(new ItemList().IronArmor);
+            // 이렇게 하면 리스트 3개에서 각각 다른 요소를 가져옴 -> 메모리 잡아먹고 후에 활용하기도 힘들다.
+            // 업데이트도 따로된다.
             items.Add(new ItemList().IronArmor);
             items.Add(new ItemList().SpartanSpear);
-            items.Add(new ItemList().SpartanSpear);
-            items.Add(new ItemList().OldSword);
             items.Add(new ItemList().OldSword);
         }
 
@@ -72,7 +71,13 @@ namespace TextRPG
         public void EquipItem(int num)
         {
             items[num].wearing = true;
-            items[num].name = "[E]" + items[num].name;
+            items[num].name = "[E]" + items[num].name; 
+            // 장착하면 실제 이름이 바뀜
+            // 이름이 이렇게 바뀌면 무슨 문제가 생기냐
+            // 상표를 바꾼것 ('갤럭시s20' -> '박찬형의 갤럭시s20)
+            // 화면 표시때문에 데이터가 변형되면 쓸모없음
+            // 화면과 / 화면을 컨트롤 하는것과 / 데이터 -> 세개를 분리하는게 좋다.
+            // mvc(model view controller)모델
         }
 
 

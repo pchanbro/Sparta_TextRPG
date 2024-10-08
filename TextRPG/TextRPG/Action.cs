@@ -21,10 +21,10 @@ namespace TextRPG
         public void SelectAction(Character user, Store store)
         {
             while (true)
-            {
+            {   // 사실상 개념적으로 묶으면 여기는 2개의 함수라 볼 수 있다.
                 Movement movement;
                 Console.Clear();
-                Console.WriteLine();
+                Console.WriteLine(); //이거로 길어지는건 문제가 아니다.
                 Console.WriteLine();
                 Console.WriteLine("스파르타 마을에 오신 여러분 환영합니다");
                 Console.WriteLine("이곳에서 던전으로 들어가기전 활동을 할 수 있습니다.");
@@ -64,7 +64,7 @@ namespace TextRPG
         public void ShowStat(Character user)
         {
             while (true)
-            {
+            {   // 여기는 4~5개의 함수 정도로 볼 수 있다.
                 Console.Clear();
                 Console.WriteLine();
                 Console.WriteLine();
